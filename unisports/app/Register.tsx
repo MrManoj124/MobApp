@@ -10,5 +10,27 @@ export default function Register(){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    const handlerRegister = async () => {
+        if(!name || !email || !password) {
+            alert("Please fill all the fields");
+            return;
+        }
+
+        try{
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const user= userCredential.user;
+
+            await setDoc(doc(db, "users", user.uid),{
+                name, email, createdAt : new Date();
+            });
+
+            alert("Account created successfully!");
+            router.push('/Login');
+        } catch (error){
+            alert("Error registering user: " + error.message);
+        }
+    };
+
+
     
 }
