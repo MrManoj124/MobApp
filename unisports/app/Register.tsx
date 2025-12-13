@@ -42,7 +42,30 @@ export default function Register(){
             />
             <TextInput
 
-            
-    )
+            <TextInput
+        style={styles.input}
+        placeholder="Email"
+        value={email}
+        keyboardType="email-address"
+        onChangeText={setEmail}
+      />
+
+      <TextInput
+        style={styles.input}
+        placeholder="Password"
+        secureTextEntry
+        value={password}
+        onChangeText={setPassword}
+      />
+
+      <TouchableOpacity style={styles.button} onPress={handleRegister}>
+        <Text style={styles.buttonText}>Create Account</Text>
+      </TouchableOpacity>
+
+      <Link href="/Login" style={styles.linkText}>
+        Already have an account? Login
+      </Link>
+    </View>
+    );
 
 }
