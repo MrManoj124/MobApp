@@ -31,6 +31,18 @@ export default function Register(){
         }
     };
 
+    return (
+        <View style={styles.container}>
+            <Text style={styles.title}>Register</Text>
+            <TextInput
+            style={styles.input}
+            placeholder="Full Name"
+            value={name}
+            onChangeText={setName}
+            />
+            <TextInput
 
-    
+            
+    )
+
 }
