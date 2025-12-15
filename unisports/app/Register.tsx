@@ -40,7 +40,6 @@ export default function Register(){
             value={name}
             onChangeText={setName}
             />
-            <TextInput
 
             <TextInput
         style={styles.input}
