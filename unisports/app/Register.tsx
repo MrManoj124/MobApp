@@ -1,7 +1,7 @@
 import {Link, router} from 'expo-router';
 import {createUserWithEmailAndPassword} from "firebase/auth";
 import {doc, setDoc} from "firebase/firestore";
-import React, {useSate} from "react";
+import React, {useState} from "react";
 import {StyleSheet, Text, TextInput, TouchableOpacity, View} from "react-native";
 import {auth, db} from "../firebaseConfig";
 
@@ -10,7 +10,7 @@ export default function Register(){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handlerRegister = async () => {
+    const handleRegister = async () => {
         if(!name || !email || !password) {
             alert("Please fill all the fields");
             return;
@@ -21,7 +21,7 @@ export default function Register(){
             const user= userCredential.user;
 
             await setDoc(doc(db, "users", user.uid),{
-                name, email, createdAt : new Date();
+                name, email, createdAt: new Date()
             });
 
             alert("Account created successfully!");

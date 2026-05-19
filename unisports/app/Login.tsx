@@ -4,7 +4,7 @@ import React, {useState} from "react";
 import {StyleSheet, Text, TextInput, TouchableOpacity, View} from "react-native";
 import {auth} from "../firebaseConfig";
 
-export default funtion Login(){
+export default function Login(){
     const [email, setEmail]= useState('');
     const [password, setPassword]=useState('');
 
