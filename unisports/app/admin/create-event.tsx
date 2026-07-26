@@ -41,4 +41,12 @@ export default function CreateEvent() {
     } finally { setLoading(false); }
   };
 
+  const Field = ({ label, placeholder, value, onChangeText, keyboardType = 'default' }: any) => (
+    <View style={styles.field}>
+      <Text style={styles.label}>{label}</Text>
+      <TextInput style={styles.input} placeholder={placeholder} placeholderTextColor="#475569"
+        value={value} onChangeText={onChangeText} keyboardType={keyboardType} />
+    </View>
+  );
+
 }
