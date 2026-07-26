@@ -101,4 +101,20 @@ export default function CreateEvent() {
           ))}
         </View>
       </View>
-)}
+
+      {/* Sport type toggle */}
+      <View style={styles.field}>
+        <Text style={styles.label}>Sport Type</Text>
+        <View style={styles.toggleRow}>
+          {(['indoor', 'outdoor'] as SportType[]).map(t => (
+            <TouchableOpacity key={t} style={[styles.toggleBtn, form.sportType === t && styles.toggleBtnActive]}
+              onPress={() => set('sportType', t)}>
+              <Text style={[styles.toggleText, form.sportType === t && { color: '#fff' }]}>
+                {t === 'indoor' ? '🏠 Indoor' : '☀️ Outdoor'}
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+      </View>
+)
+}
