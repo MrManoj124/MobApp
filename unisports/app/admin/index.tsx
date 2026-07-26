@@ -65,7 +65,36 @@ export default function AdminDashboard() {
         ))}
       </View>
 
-      
-      </View>
-  )
+      {loading ? <ActivityIndicator color="#4F46E5" style={{ marginTop: 30 }} /> : (
+        <ScrollView style={{ flex: 1 }}>
+          {activeTab === 'events' ? (
+            events.map(event => {
+              const cat = CATEGORIES.find(c => c.id === event.category);
+              return (
+                <View key={event.id} style={styles.card}>
+                  <View style={styles.cardRow}>
+                    <View style={{ flex: 1 }}>
+                      <Text style={styles.cardTitle}>{event.title}</Text>
+                      <Text style={styles.cardMeta}>{event.sport} · {cat?.label}</Text>
+                      <Text style={styles.cardMeta}>📅 {event.date ? new Date(event.date.seconds * 1000).toDateString() : 'TBD'}</Text>
+                      <Text style={styles.cardMeta}>👥 {event.registeredCount ?? 0} / {event.maxParticipants} registered</Text>
+                    </View>
+                    <View style={styles.cardActions}>
+                      <TouchableOpacity style={styles.deleteBtn} onPress={() => deleteEvent(event.id, event.title)}>
+                        <Text style={styles.deleteBtnText}>🗑️</Text>
+                      </TouchableOpacity>
+                    </View>
+                  </View>
+                </View>
+              );
+            })
+          ) 
+
+          </ScrollView>
+
+        )
+      )}
+    </View>
+  );
 }
+      }
