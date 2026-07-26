@@ -22,5 +22,23 @@ export default function CreateEvent() {
     const dateObj = new Date(form.dateStr);
     if (isNaN(dateObj.getTime())) { Alert.alert('Invalid Date', 'Use format YYYY-MM-DD'); return; }
 
-  }
+    setLoading(true);
+    try {
+      await addDoc(collection(db, 'events'), {
+        title: form.title, sport: form.sport, sportId: form.sportId,
+        sportType: form.sportType, category: form.category,
+        venue: form.venue, description: form.description,
+        maxParticipants: parseInt(form.maxParticipants) || 20,
+        registeredCount: 0,
+        date: Timestamp.fromDate(dateObj),
+        createdAt: Timestamp.now(),
+      });
+      Alert.alert('Created! 🎉', 'Event has been created successfully.', [
+        { text: 'OK', onPress: () => router.back() }
+      ]);
+    } catch (e: any) {
+      Alert.alert('Error', e.message);
+    } finally { setLoading(false); }
+  };
+
 }
