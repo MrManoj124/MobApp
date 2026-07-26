@@ -106,3 +106,26 @@ export default function AdminDashboard() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: '#0f172a' },
+  statsRow: { flexDirection: 'row', padding: 16, gap: 10 },
+  statCard: { flex: 1, backgroundColor: '#1e293b', borderRadius: 10, padding: 14, borderTopWidth: 3 },
+  statNumber: { fontSize: 28, fontWeight: 'bold' },
+  statLabel: { color: '#64748b', fontSize: 12, marginTop: 2 },
+  createBtn: { backgroundColor: '#4F46E5', marginHorizontal: 16, borderRadius: 10, paddingVertical: 14, alignItems: 'center', marginBottom: 16 },
+  createBtnText: { color: '#fff', fontWeight: '700', fontSize: 15 },
+  tabs: { flexDirection: 'row', marginHorizontal: 16, backgroundColor: '#1e293b', borderRadius: 10, padding: 4, marginBottom: 12 },
+  tab: { flex: 1, paddingVertical: 10, borderRadius: 8, alignItems: 'center' },
+  tabActive: { backgroundColor: '#4F46E5' },
+  tabText: { color: '#64748b', fontWeight: '600', fontSize: 13 },
+  tabTextActive: { color: '#fff' },
+  card: { backgroundColor: '#1e293b', borderRadius: 10, padding: 14, marginHorizontal: 16, marginBottom: 10 },
+  cardRow: { flexDirection: 'row', alignItems: 'flex-start' },
+  cardTitle: { color: '#fff', fontSize: 15, fontWeight: 'bold', marginBottom: 4 },
+  cardMeta: { color: '#64748b', fontSize: 13, marginTop: 2 },
+  cardActions: { marginLeft: 8 },
+  deleteBtn: { backgroundColor: '#ef444422', borderRadius: 8, padding: 10 },
+  deleteBtnText: { fontSize: 18 },
+  statusBadge: { alignSelf: 'flex-start', paddingHorizontal: 10, paddingVertical: 4, borderRadius: 20, marginTop: 6 },
+});
