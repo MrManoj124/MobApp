@@ -11,4 +11,14 @@ export default function AdminDashboard() {
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<'events' | 'registrations'>('events');
 
+  const fetchData = async () => {
+    setLoading(true);
+    try {
+      const evSnap = await getDocs(query(collection(db, 'events'), orderBy('date')));
+      setEvents(evSnap.docs.map(d => ({ id: d.id, ...d.data() })));
+      const regSnap = await getDocs(query(collection(db, 'registrations'), orderBy('registeredAt', 'desc')));
+      setRegs(regSnap.docs.map(d => ({ id: d.id, ...d.data() })));
+    } catch (e) { console.log(e); }
+    finally { setLoading(false); }
+  };
 }
