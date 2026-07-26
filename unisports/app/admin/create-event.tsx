@@ -145,6 +145,6 @@ const styles = StyleSheet.create({
   toggleBtn: { flex: 1, paddingVertical: 10, borderRadius: 8, alignItems: 'center' },
   toggleBtnActive: { backgroundColor: '#4F46E5' },
   toggleText: { color: '#64748b', fontWeight: '600', fontSize: 14 },
-  dColor: '#4F46E5', borderRadius: 12, paddingVertical: 16, alignItems: 'center', marginTop: 8 },
+  createBtn: { backgroundColor: '#4F46E5', borderRadius: 12, paddingVertical: 16, alignItems: 'center', marginTop: 8 },
   createBtnText: { color: '#fff', fontWeight: '700', fontSize: 16 },
 });
