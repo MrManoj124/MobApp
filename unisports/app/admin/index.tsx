@@ -88,13 +88,21 @@ export default function AdminDashboard() {
                 </View>
               );
             })
-          ) 
-
-          </ScrollView>
-
-        )
+          ) : (
+            regs.map(reg => (
+              <View key={reg.id} style={styles.card}>
+                <Text style={styles.cardTitle}>{reg.userName}</Text>
+                <Text style={styles.cardMeta}>Faculty: {reg.faculty}</Text>
+                <Text style={styles.cardMeta}>Event ID: {reg.eventId}</Text>
+                <View style={[styles.statusBadge, { backgroundColor: reg.status === 'confirmed' ? '#22c55e22' : '#f59e0b22' }]}>
+                  <Text style={{ color: reg.status === 'confirmed' ? '#22c55e' : '#f59e0b', fontSize: 12, fontWeight: '700' }}>{reg.status}</Text>
+                </View>
+              </View>
+            ))
+          )}
+          <View style={{ height: 30 }} />
+        </ScrollView>
       )}
     </View>
   );
 }
-      }
