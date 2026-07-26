@@ -49,4 +49,12 @@ export default function CreateEvent() {
     </View>
   );
 
+  return (
+    <ScrollView style={styles.container} keyboardShouldPersistTaps="handled">
+      <Field label="Event Title *" placeholder="e.g. Faculty Cricket Championship" value={form.title} onChangeText={(v: string) => set('title', v)} />
+      <Field label="Venue *" placeholder="e.g. Main Sports Ground" value={form.venue} onChangeText={(v: string) => set('venue', v)} />
+      <Field label="Date * (YYYY-MM-DD)" placeholder="2024-08-15" value={form.dateStr} onChangeText={(v: string) => set('dateStr', v)} />
+      <Field label="Max Participants" placeholder="20" value={form.maxParticipants} onChangeText={(v: string) => set('maxParticipants', v)} keyboardType="number-pad" />
+      <Field label="Description" placeholder="Event details..." value={form.description} onChangeText={(v: string) => set('description', v)} />
+)
 }
