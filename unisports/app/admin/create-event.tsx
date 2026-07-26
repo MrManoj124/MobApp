@@ -11,4 +11,8 @@ export default function CreateEvent() {
     category: 'faculty' as GameCategory, venue: '', description: '',
     maxParticipants: '20', dateStr: '',
   });
+  const [loading, setLoading] = useState(false);
+  const [showSports, setShowSports] = useState(false);
+  const set = (k: string, v: string) => setForm(p => ({ ...p, [k]: v }));
+
 }
