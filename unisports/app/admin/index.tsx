@@ -48,7 +48,24 @@ export default function AdminDashboard() {
           </View>
         ))}
       </View>
+
+      {/* Create button */}
+      <TouchableOpacity style={styles.createBtn} onPress={() => router.push('/admin/create-event')}>
+        <Text style={styles.createBtnText}>+ Create New Event</Text>
+      </TouchableOpacity>
+
+      {/* Tabs */}
+      <View style={styles.tabs}>
+        {(['events', 'registrations'] as const).map(tab => (
+          <TouchableOpacity key={tab} style={[styles.tab, activeTab === tab && styles.tabActive]} onPress={() => setActiveTab(tab)}>
+            <Text style={[styles.tabText, activeTab === tab && styles.tabTextActive]}>
+              {tab === 'events' ? `Events (${events.length})` : `Registrations (${regs.length})`}
+            </Text>
+          </TouchableOpacity>
+        ))}
       </View>
 
-      )
-      }
+      
+      </View>
+  )
+}
