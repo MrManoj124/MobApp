@@ -124,3 +124,27 @@ export default function CreateEvent() {
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: '#0f172a', padding: 16 },
+  field: { marginBottom: 18 },
+  label: { color: '#94a3b8', fontSize: 13, fontWeight: '700', marginBottom: 6, textTransform: 'uppercase', letterSpacing: 0.5 },
+  input: { backgroundColor: '#1e293b', color: '#fff', borderRadius: 10, paddingHorizontal: 14, paddingVertical: 12, fontSize: 15 },
+  picker: { backgroundColor: '#1e293b', borderRadius: 10, paddingHorizontal: 14, paddingVertical: 14, flexDirection: 'row', justifyContent: 'space-between' },
+  pickerSelected: { color: '#fff', fontSize: 15 },
+  pickerPlaceholder: { color: '#475569', fontSize: 15 },
+  chevron: { color: '#64748b' },
+  dropdown: { backgroundColor: '#1e293b', borderRadius: 10, marginTop: 4, maxHeight: 280 },
+  dropdownSection: { color: '#64748b', fontSize: 12, fontWeight: '700', paddingHorizontal: 14, paddingTop: 10, paddingBottom: 4, textTransform: 'uppercase' },
+  dropdownItem: { paddingHorizontal: 14, paddingVertical: 12, borderTopWidth: 1, borderTopColor: '#0f172a' },
+  dropdownText: { color: '#fff', fontSize: 15 },
+  chipRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+  chip: { backgroundColor: '#1e293b', borderRadius: 20, paddingHorizontal: 14, paddingVertical: 8 },
+  chipText: { color: '#64748b', fontSize: 13, fontWeight: '600' },
+  toggleRow: { flexDirection: 'row', backgroundColor: '#1e293b', borderRadius: 10, padding: 4, gap: 4 },
+  toggleBtn: { flex: 1, paddingVertical: 10, borderRadius: 8, alignItems: 'center' },
+  toggleBtnActive: { backgroundColor: '#4F46E5' },
+  toggleText: { color: '#64748b', fontWeight: '600', fontSize: 14 },
+  dColor: '#4F46E5', borderRadius: 12, paddingVertical: 16, alignItems: 'center', marginTop: 8 },
+  createBtnText: { color: '#fff', fontWeight: '700', fontSize: 16 },
+});
