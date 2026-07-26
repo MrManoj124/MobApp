@@ -85,6 +85,20 @@ export default function CreateEvent() {
           </View>
         )}
       </View>
-      </ScrollView>
-)
-}
+
+      {/* Category */}
+      <View style={styles.field}>
+        <Text style={styles.label}>Game Category *</Text>
+        <View style={styles.chipRow}>
+          {CATEGORIES.map(cat => (
+            <TouchableOpacity key={cat.id}
+              style={[styles.chip, form.category === cat.id && { backgroundColor: cat.color }]}
+              onPress={() => set('category', cat.id)}>
+              <Text style={[styles.chipText, form.category === cat.id && { color: '#fff' }]}>
+                {cat.icon} {cat.label}
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+      </View>
+)}
