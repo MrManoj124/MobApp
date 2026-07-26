@@ -56,5 +56,6 @@ export default function CreateEvent() {
       <Field label="Date * (YYYY-MM-DD)" placeholder="2024-08-15" value={form.dateStr} onChangeText={(v: string) => set('dateStr', v)} />
       <Field label="Max Participants" placeholder="20" value={form.maxParticipants} onChangeText={(v: string) => set('maxParticipants', v)} keyboardType="number-pad" />
       <Field label="Description" placeholder="Event details..." value={form.description} onChangeText={(v: string) => set('description', v)} />
-)
+    </ScrollView>
+  );
 }
