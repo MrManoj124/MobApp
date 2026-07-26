@@ -116,5 +116,11 @@ export default function CreateEvent() {
           ))}
         </View>
       </View>
-)
+
+      <TouchableOpacity style={[styles.createBtn, loading && { opacity: 0.6 }]} onPress={handleCreate} disabled={loading}>
+        {loading ? <ActivityIndicator color="#fff" /> : <Text style={styles.createBtnText}>Create Event</Text>}
+      </TouchableOpacity>
+      <View style={{ height: 40 }} />
+    </ScrollView>
+  );
 }
