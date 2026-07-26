@@ -56,6 +56,35 @@ export default function CreateEvent() {
       <Field label="Date * (YYYY-MM-DD)" placeholder="2024-08-15" value={form.dateStr} onChangeText={(v: string) => set('dateStr', v)} />
       <Field label="Max Participants" placeholder="20" value={form.maxParticipants} onChangeText={(v: string) => set('maxParticipants', v)} keyboardType="number-pad" />
       <Field label="Description" placeholder="Event details..." value={form.description} onChangeText={(v: string) => set('description', v)} />
-    </ScrollView>
-  );
+
+      {/* Sport picker */}
+      <View style={styles.field}>
+        <Text style={styles.label}>Sport *</Text>
+        <TouchableOpacity style={styles.picker} onPress={() => setShowSports(!showSports)}>
+          <Text style={form.sport ? styles.pickerSelected : styles.pickerPlaceholder}>
+            {form.sport ? `${SPORTS.find(s => s.id === form.sportId)?.icon ?? '🏅'} ${form.sport}` : 'Select a sport...'}
+          </Text>
+          <Text style={styles.chevron}>{showSports ? '▲' : '▼'}</Text>
+        </TouchableOpacity>
+        {showSports && (
+          <View style={styles.dropdown}>
+            <Text style={styles.dropdownSection}>🏠 Indoor</Text>
+            {SPORTS.filter(s => s.type === 'indoor').map(s => (
+              <TouchableOpacity key={s.id} style={styles.dropdownItem}
+                onPress={() => { set('sport', s.name); set('sportId', s.id); set('sportType', s.type); setShowSports(false); }}>
+                <Text style={styles.dropdownText}>{s.icon} {s.name}</Text>
+              </TouchableOpacity>
+            ))}
+            <Text style={styles.dropdownSection}>☀️ Outdoor</Text>
+            {SPORTS.filter(s => s.type === 'outdoor').map(s => (
+              <TouchableOpacity key={s.id} style={styles.dropdownItem}
+                onPress={() => { set('sport', s.name); set('sportId', s.id); set('sportType', s.type); setShowSports(false); }}>
+                <Text style={styles.dropdownText}>{s.icon} {s.name}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        )}
+      </View>
+      </ScrollView>
+)
 }
