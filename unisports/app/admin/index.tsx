@@ -30,4 +30,25 @@ export default function AdminDashboard() {
       { text: 'Delete', style: 'destructive', onPress: async () => { await deleteDoc(doc(db, 'events', id)); fetchData(); } }
     ]);
   };
-}
+
+  const stats = [
+    { label: 'Total Events', value: events.length, color: '#4F46E5' },
+    { label: 'Registrations', value: regs.length, color: '#059669' },
+    { label: 'This Month', value: events.filter(e => e.date && new Date(e.date.seconds * 1000).getMonth() === new Date().getMonth()).length, color: '#D97706' },
+  ];
+
+  return (
+    <View style={styles.container}>
+      {/* Stats */}
+      <View style={styles.statsRow}>
+        {stats.map((s, i) => (
+          <View key={i} style={[styles.statCard, { borderTopColor: s.color }]}>
+            <Text style={[styles.statNumber, { color: s.color }]}>{s.value}</Text>
+            <Text style={styles.statLabel}>{s.label}</Text>
+          </View>
+        ))}
+      </View>
+      </View>
+
+      )
+      }
