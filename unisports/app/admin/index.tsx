@@ -30,7 +30,4 @@ export default function AdminDashboard() {
       { text: 'Delete', style: 'destructive', onPress: async () => { await deleteDoc(doc(db, 'events', id)); fetchData(); } }
     ]);
   };
-  deleteBtn: { backgroundColor: '#ef444422', borderRadius: 8, padding: 10 },
-  deleteBtnText: { fontSize: 18 },
-  statusBadge: { alignSelf: 'flex-start', paddingHorizontal: 10, paddingVertical: 4, borderRadius: 20, marginTop: 6 },
-});
+}
