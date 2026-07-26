@@ -4,3 +4,11 @@ import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, Alert, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { CATEGORIES } from '../../constants/sports';
 import { db } from '../../firebaseConfig';
+
+export default function AdminDashboard() {
+  const [events, setEvents] = useState<any[]>([]);
+  const [regs, setRegs] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [activeTab, setActiveTab] = useState<'events' | 'registrations'>('events');
+
+}
