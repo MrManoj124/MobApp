@@ -11,6 +11,16 @@ export default function ProfileScreen() {
         <Text style={styles.email}>student@university.edu</Text>
       </View>
 
+      <View style={styles.card}>
+        <Text style={styles.sectionTitle}>Account</Text>
+        <Text style={styles.infoText}>Faculty: Computer Science</Text>
+        <Text style={styles.infoText}>Role: Player</Text>
+        <Text style={styles.infoText}>Joined events: 2</Text>
+      </View>
+
+      <TouchableOpacity style={styles.button} onPress={() => router.replace('/Login')}>
+        <Text style={styles.buttonText}>Go to Login</Text>
+     
     </View>
   );
 }
