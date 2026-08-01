@@ -30,3 +30,20 @@ export default function MyEventsScreen() {
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: '#0f172a' },
+  content: { padding: 16, paddingBottom: 30 },
+  title: { color: '#fff', fontSize: 22, fontWeight: '700' },
+  subtitle: { color: '#64748b', fontSize: 13, marginTop: 4, marginBottom: 12 },
+  summaryCard: { backgroundColor: '#1e293b', borderRadius: 12, padding: 14, marginBottom: 12 },
+  summaryValue: { color: '#fff', fontSize: 24, fontWeight: '700' },
+  summaryLabel: { color: '#64748b', fontSize: 13, marginTop: 4 },
+  card: { backgroundColor: '#1e293b', borderRadius: 12, padding: 14, marginBottom: 12 },
+  cardTitle: { color: '#fff', fontSize: 15, fontWeight: '700', marginBottom: 4 },
+  cardMeta: { color: '#64748b', fontSize: 13, marginTop: 2 },
+  statusBadge: { alignSelf: 'flex-start', borderRadius: 999, paddingHorizontal: 10, paddingVertical: 4, marginTop: 8 },
+  statusConfirmed: { backgroundColor: '#22c55e22' },
+  statusPending: { backgroundColor: '#f59e0b22' },
+  statusText: { color: '#fff', fontSize: 12, fontWeight: '700' },
+});
