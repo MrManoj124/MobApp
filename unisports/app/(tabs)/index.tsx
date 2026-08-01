@@ -28,7 +28,25 @@ export default function HomeScreen() {
         </TouchableOpacity>
       </View>
 
-      
+      <View style={styles.statsRow}>
+        {quickStats.map((item) => (
+          <View key={item.label} style={styles.statCard}>
+            <Text style={[styles.statValue, { color: item.color }]}>{item.value}</Text>
+            <Text style={styles.statLabel}>{item.label}</Text>
+          </View>
+        ))}
+      </View>
+
+      <View style={styles.sectionHeader}>
+        <Text style={styles.sectionTitle}>Featured</Text>
+      </View>
+
+      {featuredEvents.map((event) => (
+        <View key={event.id} style={styles.card}>
+          <Text style={styles.cardTitle}>{event.title}</Text>
+          <Text style={styles.cardMeta}>{event.time}</Text>
+          <Text style={styles.cardMeta}>📍 {event.venue}</Text>
+        </View>
       ))}
     </View>
   );
