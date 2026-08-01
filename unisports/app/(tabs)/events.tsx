@@ -32,7 +32,26 @@ export default function EventsScreen() {
       <Text style={styles.title}>Available events</Text>
       <Text style={styles.subtitle}>Choose an event and tap join to reserve your spot.</Text>
 
-      
+      {eventList.map((event) => {
+        const isJoined = joined.includes(event.id);
+
+        return (
+          <View key={event.id} style={styles.card}>
+            <View style={styles.cardTop}>
+              <View style={{ flex: 1 }}>
+                <Text style={styles.cardTitle}>{event.title}</Text>
+                <Text style={styles.cardMeta}>{event.sport} · {event.venue}</Text>
+                <Text style={styles.cardMeta}>{event.date}</Text>
+              </View>
+              <View style={styles.badge}>
+                <Text style={styles.badgeText}>{event.category}</Text>
+              </View>
+            </View>
+
+            
+          </View>
+        );
+      })}
     </ScrollView>
   );
 }
