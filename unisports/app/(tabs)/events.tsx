@@ -48,7 +48,21 @@ export default function EventsScreen() {
               </View>
             </View>
 
-            
+            <Text style={styles.cardDesc}>{event.description}</Text>
+
+            <View style={styles.footerRow}>
+              <Text style={styles.spotsText}>{event.spots} spots left</Text>
+              <TouchableOpacity
+                style={[styles.joinBtn, isJoined && styles.joinBtnActive]}
+                onPress={() => {
+                  setJoined((prev) =>
+                    prev.includes(event.id) ? prev.filter((id) => id !== event.id) : [...prev, event.id]
+                  );
+                }}
+              >
+                <Text style={[styles.joinBtnText, isJoined && styles.joinBtnTextActive]}>{isJoined ? 'Joined' : 'Join'}</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         );
       })}
