@@ -23,3 +23,16 @@ const eventList = [
     spots: 12,
   },
 ];
+
+export default function EventsScreen() {
+  const [joined, setJoined] = useState<string[]>(['cricket']);
+
+  return (
+    <ScrollView style={styles.container} contentContainerStyle={styles.content}>
+      <Text style={styles.title}>Available events</Text>
+      <Text style={styles.subtitle}>Choose an event and tap join to reserve your spot.</Text>
+
+      
+    </ScrollView>
+  );
+}
