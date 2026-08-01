@@ -20,7 +20,7 @@ export default function ProfileScreen() {
 
       <TouchableOpacity style={styles.button} onPress={() => router.replace('/Login')}>
         <Text style={styles.buttonText}>Go to Login</Text>
-     
+      </TouchableOpacity>
     </View>
   );
 }
